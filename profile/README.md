@@ -2,8 +2,8 @@
 
 Asteroid is building technology to help humans and agents work together
 
-- https://asteroid.sh
-- https://blog.asteroid.sh
-- https://docs.asteroid.sh
+- https://asteroid.ai
+- https://blog.asteroid.ai
+- https://docs.asteroid.ai
 
-Get in touch! founders@asteroid.sh
+Get in touch! founders@asteroid.ai
