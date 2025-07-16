@@ -41,6 +41,7 @@ mergeable:
           - "change_type:regular"
           - "change_type:minor"
           - "change_type:emergency"
+    validate: []
     fail:
       - do: comment
         payload: "PR must have a change_classification or change_type label to be merged."
