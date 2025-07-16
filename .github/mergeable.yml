@@ -41,7 +41,7 @@ mergeable:
             must_include:
               regex: "change_classification"
           - do: label
-            must_exclude:
+            must_include:
               regex: "change_type"
     fail:
       - do: comment
