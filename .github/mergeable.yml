@@ -4,9 +4,10 @@ mergeable:
     name: "Require approval for major/regular changes"
     filter:
       - do: label
-        must_include:
-          - "change_classification:major"
-          - "change_classification:regular"
+        pull_request:
+          must_include:
+            - "change_classification:major"
+            - "change_classification:regular"
     validate:
       - do: approvals
         required: 1
@@ -18,9 +19,10 @@ mergeable:
     name: "Allow auto-merge for minor/emergency changes"
     filter:
       - do: label
-        must_include:
-          - "change_classification:minor"
-          - "change_classification:emergency"
+        pull_request:
+          must_include:
+            - "change_classification:minor"
+            - "change_classification:emergency"
     validate:
       - do: approvals
         required: 0
@@ -32,7 +34,8 @@ mergeable:
     name: "Require change classification label"
     filter:
       - do: label
-        must_exclude:
+        pull_request:
+          must_exclude:
           - "change_classification:major"
           - "change_classification:regular"
           - "change_classification:minor"
