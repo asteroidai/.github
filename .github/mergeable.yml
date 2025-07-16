@@ -34,14 +34,15 @@ mergeable:
 
   - when: pull_request.*
     name: "Require change classification label"
-    filter:
-      - do: payload
-        pull_request:
-          labels:
+    validate:
+      - do: label
+        and:
+          - do: label
+            must_include:
+              regex: "change_classification"
+          - do: label
             must_exclude:
-              regex: "change_classification:|change_type:"
-              key: name
-    validate: []
+              regex: "change_type"
     fail:
       - do: comment
         payload: "PR must have a change_classification or change_type label to be merged."
