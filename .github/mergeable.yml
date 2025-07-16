@@ -5,9 +5,10 @@ mergeable:
     filter:
       - do: payload
         pull_request:
-          must_include:
-            - "change_classification:major"
-            - "change_classification:regular"
+          labels:
+            must_include:
+              regex: "change_classification:major|change_classification:regular"
+              key: name
     validate:
       - do: approvals
         required: 1
@@ -20,9 +21,10 @@ mergeable:
     filter:
       - do: payload
         pull_request:
-          must_include:
-            - "change_classification:minor"
-            - "change_classification:emergency"
+          labels:
+            must_include:
+              regex: "change_classification:minor|change_classification:emergency"
+              key: name
     validate:
       - do: approvals
         required: 0
@@ -35,15 +37,10 @@ mergeable:
     filter:
       - do: payload
         pull_request:
-          must_exclude:
-          - "change_classification:major"
-          - "change_classification:regular"
-          - "change_classification:minor"
-          - "change_classification:emergency"
-          - "change_type:major"
-          - "change_type:regular"
-          - "change_type:minor"
-          - "change_type:emergency"
+          labels:
+            must_exclude:
+              regex: "change_classification:|change_type:"
+              key: name
     validate: []
     fail:
       - do: comment
