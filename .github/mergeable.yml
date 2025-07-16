@@ -3,7 +3,7 @@ mergeable:
   - when: pull_request.*
     name: "Require approval for major/regular changes"
     filter:
-      - do: label
+      - do: payload
         pull_request:
           must_include:
             - "change_classification:major"
@@ -18,7 +18,7 @@ mergeable:
   - when: pull_request.*
     name: "Allow auto-merge for minor/emergency changes"
     filter:
-      - do: label
+      - do: payload
         pull_request:
           must_include:
             - "change_classification:minor"
@@ -33,7 +33,7 @@ mergeable:
   - when: pull_request.*
     name: "Require change classification label"
     filter:
-      - do: label
+      - do: payload
         pull_request:
           must_exclude:
           - "change_classification:major"
