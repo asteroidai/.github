@@ -1,9 +1,6 @@
-## Hi there 👋
+**Asteroid makes it insanely easy to build reliable browser AI agents.**
 
-Asteroid is building technology to help humans and agents work together
+Automating real workflows across healthcare, insurance, and more.  
+Start building on Asteroid — we'll help you move fast.
 
-- https://asteroid.ai
-- https://blog.asteroid.ai
-- https://docs.asteroid.ai
-
-Get in touch! founders@asteroid.ai
+[asteroid.ai](https://asteroid.ai) • [docs](https://docs.asteroid.ai) • [blog](https://asteroid.ai/blog)
